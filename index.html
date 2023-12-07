@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Basic template • Pico.css</title>
+    <meta
+            name="description"
+            content="A basic custom template for Pico using only CSS custom properties (variables). Built with Pico CSS."
+    />
+    <link rel="shortcut icon" href="https://picocss.com/favicon.ico"/>
+    <link rel="canonical" href="https://picocss.com/examples/basic-template/"/>
+
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"/>
+
+    <!-- Custom template-->
+    <link rel="stylesheet" href="css/custom.css"/>
+</head>
+
+<body>
+<!-- Header -->
+<header class="container">
+    <hgroup>
+        <h1>Channel commands</h1>
+        <h2>A list of chat commands enabled in chat.</h2>
+    </hgroup>
+    <nav>
+        <ul>
+            <li>
+                <details role="list">
+                    <summary aria-haspopup="listbox" role="button" class="secondary">Theme</summary>
+                    <ul role="listbox">
+                        <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+                        <li><a href="#" data-theme-switcher="light">Light</a></li>
+                        <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- ./ Header -->
+
+<!-- Main -->
+<main class="container">
+    <!-- Tables -->
+    <section id="tables">
+        <h2>Streaming Plaforms</h2>
+        <h3><a href="https://www.youtube.com/michaelbrooksuk"><i data-feather="youtube"></i></a>
+            <a style="margin-left: 15px" href="https://www.twitch.tv/michaelbrooksuk"><i data-feather="twitch"></i></a>
+        </h3>
+        <figure>
+            <table role="grid">
+                <thead>
+                <tr>
+                    <th scope="col">Platform</th>
+                    <th scope="col">Command</th>
+                    <th scope="col">Permissions</th>
+                    <th scope="col">Response</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row"><i data-feather="youtube"></i> <i data-feather="twitch"></i></th>
+                    <td>!commands</td>
+                    <td>Everyone</td>
+                    <td>You can find a list of commands at...</td>
+                </tr>
+                <tr>
+                    <th scope="row"><i data-feather="youtube"></i></th>
+                    <td>!twitch</td>
+                    <td>Everyone</td>
+                    <td>You can watch the livestream on Twitch - https://www.twitch.tv/michaelbrooksuk</td>
+                </tr>
+                <tr>
+                    <th scope="row"><i data-feather="youtube"></i> <i data-feather="twitch"></i></th>
+                    <td>!bonk</td>
+                    <td>Everyone</td>
+                    <td>Sender bonks @user</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                </tbody>
+            </table>
+        </figure>
+    </section>
+    <!-- ./ Tables -->
+</main>
+<!-- ./ Main -->
+
+<!-- Footer -->
+<footer class="container">
+    <small
+    >Built with <a href="https://picocss.com">Pico</a> •
+        <a href="https://github.com/picocss/examples/blob/master/v1-basic-template/"
+        >Source code</a
+        ></small
+    >
+</footer>
+<!-- ./ Footer -->
+
+<script src="https://unpkg.com/feather-icons"></script>
+
+<!-- Minimal theme switcher -->
+<script src="js/minimal-theme-switcher.js"></script>
+<script>
+    feather.replace({
+        height: 50,
+        width: 50,
+    });
+</script>
+</body>
+</html>
