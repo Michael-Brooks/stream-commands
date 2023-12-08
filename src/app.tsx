@@ -1,12 +1,23 @@
-import {useState} from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
 import '@picocss/pico/css/pico.css'
 import './app.css'
 import './minimal-theme-switcher.js'
 import {Twitch, Youtube} from "react-feather"
 
+import socials from './data/socials.json'
+
 export function App() {
+    const commands = {
+        "commands": {
+            "name": "commands",
+            "platform": [
+                "youtube",
+                "twitch"
+            ],
+            "permissions": "everyone",
+            "Response": "You can find a list of commands at https://michael-brooks.github.io/stream-commands/"
+        }
+    }
+
     return (
         <>
             <header class="container">
@@ -22,7 +33,6 @@ export function App() {
                                 <ul role="listbox">
                                     <li><a href="#" data-theme-switcher="auto">Auto</a></li>
                                     <li><a href="#" data-theme-switcher="light">Light</a></li>
-                                    <li><a href="#" data-theme-switcher="dark">Dark</a></li>
                                 </ul>
                             </details>
                         </li>
@@ -33,9 +43,14 @@ export function App() {
             <main class="container">
                 <section id="tables">
                     <h2>Streaming Plaforms</h2>
-                    <h3><a href="https://www.youtube.com/@michaelbrooksuk"><Youtube size={50}/></a>
-                        <a style="margin-left: 15px" href="https://www.twitch.tv/michaelbrooksuk"><Twitch
-                            size={50}/></a>
+
+                    <h3>
+                        {Object.keys(socials).map((platform, index) =>
+                            <a href={socials[platform]} class="streaming_platform">
+                                {platform === 'youtube' && <Youtube size={50} /> }
+                                {platform === 'twitch' && <Twitch size={50} /> }
+                            </a>
+                        )}
                     </h3>
                     <figure>
                         <table role="grid">
