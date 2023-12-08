@@ -1,0 +1,28 @@
+{
+  "0": {
+    "platform": [
+      "youtube",
+      "twitch"
+    ],
+    "command": "!commands",
+    "permissions": "Everyone",
+    "response": "You can find a list of commands at https://michael-brooks.github.io/stream-commands/"
+  },
+  "1": {
+    "platform": [
+      "youtube"
+    ],
+    "command": "!twitch",
+    "permissions": "Everyone",
+    "response": "You can watch the livestream on Twitch - https://www.twitch.tv/michaelbrooksuk"
+  },
+  "2": {
+    "platform": [
+      "youtube",
+      "twitch"
+    ],
+    "command": "!bonk",
+    "permissions": "Everyone",
+    "response": "Sender bonks user"
+  }
+}

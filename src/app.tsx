@@ -4,20 +4,9 @@ import './minimal-theme-switcher.js'
 import {Twitch, Youtube} from "react-feather"
 
 import socials from './data/socials.json'
+import commands from './data/commands.json'
 
 export function App() {
-    const commands = {
-        "commands": {
-            "name": "commands",
-            "platform": [
-                "youtube",
-                "twitch"
-            ],
-            "permissions": "everyone",
-            "Response": "You can find a list of commands at https://michael-brooks.github.io/stream-commands/"
-        }
-    }
-
     return (
         <>
             <header class="container">
@@ -47,8 +36,8 @@ export function App() {
                     <h3>
                         {Object.keys(socials).map((platform, index) =>
                             <a href={socials[platform]} class="streaming_platform">
-                                {platform === 'youtube' && <Youtube size={50} /> }
-                                {platform === 'twitch' && <Twitch size={50} /> }
+                                {platform === 'youtube' && <Youtube size={50}/>}
+                                {platform === 'twitch' && <Twitch size={50}/>}
                             </a>
                         )}
                     </h3>
@@ -63,32 +52,22 @@ export function App() {
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row"><Youtube size={25}/> <Twitch size={25}/></th>
-                                <td>!commands</td>
-                                <td>Everyone</td>
-                                <td>You can find a list of commands at
-                                    https://michael-brooks.github.io/stream-commands/
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><Youtube size={25}/></th>
-                                <td>!twitch</td>
-                                <td>Everyone</td>
-                                <td>You can watch the livestream on Twitch - https://www.twitch.tv/michaelbrooksuk</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><Youtube size={25}/> <Twitch size={25}/></th>
-                                <td>!bonk</td>
-                                <td>Everyone</td>
-                                <td>Sender bonks @user</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Cell</td>
-                                <td>Cell</td>
-                                <td>Cell</td>
-                            </tr>
+                            {Object.keys(commands).map((command, index) =>
+                                <tr>
+                                    <th scope="row">
+                                        {Object.keys(command).map((platform, index) =>
+                                            <>
+                                                {platform === 'youtube' && <Youtube size={25}/>}
+                                                {platform === 'twitch' && <Twitch size={25}/>}
+                                            </>
+                                        )}
+                                        <Youtube size={25}/> <Twitch size={25}/>
+                                    </th>
+                                    <td>{commands[command].command}</td>
+                                    <td>{commands[command].permissions}</td>
+                                    <td>{commands[command].response}</td>
+                                </tr>
+                            )}
                             </tbody>
                         </table>
                     </figure>
