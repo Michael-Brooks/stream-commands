@@ -34,7 +34,7 @@ export function App() {
                     <h2>Streaming Plaforms</h2>
 
                     <h3>
-                        {Object.keys(socials).map((platform, index) =>
+                        {Object.keys(socials).map(platform =>
                             <a href={socials[platform]} class="streaming_platform">
                                 {platform === 'youtube' && <Youtube size={50}/>}
                                 {platform === 'twitch' && <Twitch size={50}/>}
